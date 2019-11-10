@@ -42,7 +42,7 @@
 
 .edit-modal{
   width: 40%;
-  padding: 75px;
+  padding: 125px 75px 75px;
   & a {
     text-decoration: none;
   }
@@ -53,8 +53,17 @@
   }
   .image-field_wrapper{
     .image-edit-btn{
-      width: 400px;
-      max-height: 200px;
+      max-width: 400px;
+      max-height: 300px;
+      & img {
+        width: auto;
+        display: block;
+        margin: auto;
+        max-height: 300px;
+        border-radius: 0%;
+        max-width: 400px;
+        object-fit:contain;
+      }
     }
   }
   .btn-box{
@@ -62,7 +71,7 @@
     
     .edit-btn{
       display: inline-block;
-      width: 40%;
+      width: 70%;
       margin: 30px 15px;
     }
   }

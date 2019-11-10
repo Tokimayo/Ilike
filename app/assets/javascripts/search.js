@@ -3,7 +3,7 @@ $(function() {
   var search_list = $(".search__box--list");
   
   function appendProduct(like) {
-     var html = `<li><a class=".search__box--ele" href="/likes/${ like.id }">${ like.user_name } / ${ like.things }</a></li>`
+     var html = `<li><a class=".search__box--ele" href="/likes/${ like.id }">${ like.user_name } / ${ like.genre } / ${ like.things }</a></li>`
       search_list.append(html);
    }
   

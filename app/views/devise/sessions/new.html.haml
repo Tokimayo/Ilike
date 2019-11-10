@@ -1,4 +1,5 @@
-#account-page.account-page
+= render 'shared/header'
+#account-page.account-page.account-new-page
   .title Log in
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     .text-field_wrapper

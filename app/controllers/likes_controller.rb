@@ -38,7 +38,7 @@ class LikesController < ApplicationController
 
   def search
     # keyword = "%#{params[:keyword]}%"
-    @likes = Like.where('things LIKE(?)', "#{params[:keyword]}%").where.not(user_id: current_user.id).limit(20)
+    @likes = Like.where('things LIKE(?)', "#{params[:keyword]}%").or(Like.where('genre LIKE(?)', "#{params[:keyword]}%")).where.not(user_id: current_user.id).limit(20)
     # @likes = Like.find_by_sql(["select * from likes where things like ? LIMIT 20", keyword]).where.not(id: current_user.id)
    respond_to do |format|
      format.html
@@ -49,6 +49,10 @@ class LikesController < ApplicationController
   def other_user
     @other_user = User.find(params[:id])
     @likes = Like.where("user_id", params[:user_id])
+  end
+
+  def other_user_detail
+    @like = Like.find( params[:id] )
   end
 
   private

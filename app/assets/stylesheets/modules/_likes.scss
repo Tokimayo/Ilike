@@ -7,16 +7,32 @@ html {
 body {
   height: 100%;
   margin: 0;
+  overflow: hidden;
+}
+
+.header{
+  font-size: 45px;
+  font-weight: 800;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  background-color: #ececec;
+  & a {
+    text-decoration: none;
+    color: $pointBlueColor;
+  }
 }
 
 .main{
+  margin-top: 66px;
   width: calc(100% - 36%);
   display: inline-block;
-  height: 100%;
+  height: calc(100% - 66px);
   vertical-align: top;
   box-sizing: border-box;
   padding: 30px;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   text-align: center;
   .likes__box{
     display: table;
@@ -57,11 +73,12 @@ body {
 }
 
 .side-bar{
+  margin-top: 66px;
   display: inline-block;
   font-size: 35px;
   width: 35%;
   border: thin solid #ccc;
-  height: 100%;
+  height: calc(100% - 66px);
   padding: 30px;
   box-sizing: border-box;
   background-color: $pointBlueColor;
@@ -106,7 +123,7 @@ body {
     }
   }
   .search__box{
-    height: 450px;
+    height: 385px;
     overflow-y: scroll;
     overflow-x: hidden;
     border: thin solid $pointBlueColor;

@@ -80,7 +80,7 @@
 #account-page.account-page{
   width: 40%;
   margin: auto;
-  padding: 100px;
+  padding: 166px;
   #error_explanation{
     color: $iconRedColor;
     margin: 30px;
@@ -103,7 +103,7 @@
       text-align: center;
       .edit-btn{
         display: inline-block;
-        width: 40%;
+        width: 70%;
         margin: 30px 15px;
       }
     }
@@ -117,12 +117,20 @@
   }
 }
 
+#account-page.account-new-page{
+  padding: 260px 166px 166px;
+}
+
+#account-page.account-regist-page{
+  padding: 115px 166px 166px;
+}
+
 .image-field_wrapper{
-  position: relative;
   .image-btn{
     width: 200px;
     height: 200px;
     margin: 0 auto;
+    position: relative;
     #like_img,
     #user_img{
       cursor: pointer;
@@ -135,7 +143,10 @@
     }
   }
   .image-edit-btn{
-    width: 300px;
+    max-height: 300px;
+    max-width: 400px;
+    width: auto;
+    height: auto;
   }
   & img {
     width:100%;

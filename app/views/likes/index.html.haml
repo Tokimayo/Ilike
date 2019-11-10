@@ -1,3 +1,4 @@
+= render 'shared/header'
 .modal_wrapper
 = render 'shared/like-modal'
 
@@ -14,7 +15,7 @@
     #regist__text
       Register your "
       %a.regist_button
-        %span.regist__btn likes
+        %span.regist__btn Likes
         %span= icon 'fas', 'plus-square', class: "regist_icon"
         %span"
   = form_tag "", method: :get, class: "search__form" do
@@ -34,5 +35,3 @@
             = image_tag "img_non_input.png", id: 'img_prev'
           =like.things
         -# = render partial: "shared/like-modal-edit", locals: { like: like }
-.footer
-  .logo

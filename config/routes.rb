@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     collection do
       get 'search'
       get 'other_user/:id', to: 'likes#other_user'
+      get 'other_user_detail/:id', to: 'likes#other_user_detail'
     end
   end
 

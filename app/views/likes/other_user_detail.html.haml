@@ -1,11 +1,10 @@
 = render 'shared/header'
 .edit-modal
-  .title Edit Like
+  .title Like Detail
   .modal__main
     = form_for @like do |i|
       .image-field_wrapper
         .image-btn.image-edit-btn
-          = i.file_field :image, id: 'like_img'
           -if @like.image.present?
             = image_tag "#{ @like.image }", id: 'img_prev', class: 'like-edit_img'
           -else
@@ -28,9 +27,7 @@
         -if @like.errors.full_messages_for(:description).any?
           .alert
             Please enter
-      .btn-box
-        = i.submit "Update", class: "submit-btn edit-btn"
       .link__box
-        = link_to like_path, method: :delete, class: "link-btn" do
-          Delete
+        = link_to "/likes/other_user/#{@like.user_id}", class: "submit-btn edit-btn" do
+          Back
      

@@ -1,3 +1,4 @@
+= render 'shared/header'
 #account-page.account-page
   .account-page__inner.clearfix
     .account-page__inner--left.account-page__header
@@ -18,9 +19,6 @@
           = f.label :email
           = f.email_field :email, class: "text-field"
         .btn-box
-          =link_to root_path do
-            .submit-btn.edit-btn
-              Back
           = f.submit "Update", class: "submit-btn edit-btn"
       .link__box
         = link_to "Log out", destroy_user_session_path, method: :delete, class: "link-btn"
