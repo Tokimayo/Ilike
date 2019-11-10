@@ -1,0 +1,152 @@
+.search__form{
+  position: relative;
+  .form-search{
+    width: 95%;
+    font-size: 20px;
+    padding: 5px;
+    border: thin solid $pointBlueColor;
+    border-radius: 5px;
+  }
+  .form-search__btn{
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    z-index: 1;
+    border: none;
+    opacity: 0;
+    cursor: pointer;
+  }
+  .form-search__icon{
+    position: absolute;
+    top: 18px;
+    right: 24px;
+    font-size: 23px;
+  }
+}
+
+.text-field_wrapper{
+  display: block;
+  margin: 10px auto;
+  width: 85%;
+  font-size: 20px;
+  font-weight: 100;
+  & label {
+  }
+  #like_image{
+    width: 15px;
+  }
+  .text-field{
+    padding: 10px;
+    border-radius: 5px;
+    border: $blueBorder;
+    width: 94%;
+    font-size: 15px;
+  }
+  .description{
+    height: 90px;
+  }
+}
+
+.submit-btn{
+  text-align: center;
+  appearance: none;
+  border: none;
+  color: $baseWhiteColor;
+  background-color: $pointBlueColor;
+  font-size: 14px;
+  border-radius: 5px;
+  width: 60%;
+  padding: 8px 0 5px;
+  display: block;
+  margin: 30px auto;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.link__box{
+  text-align: center;
+  margin-top: -5px;
+  .link-btn{
+    display: inline-block;
+    color: $iconRedColor;
+    text-decoration: none;
+    font-size: 25px;
+    margin: 0 30px 15px 15px;
+  }
+}
+
+#account-page.account-page{
+  width: 40%;
+  margin: auto;
+  padding: 100px;
+  #error_explanation{
+    color: $iconRedColor;
+    margin: 30px;
+  }
+  & a {
+    text-decoration: none;
+  }
+  .title{
+    font-size: 30px;
+    text-align: center;
+  }
+  .user-form{
+    margin: 30px 0;
+    #img_prev{
+      border-radius: 25px;
+      display: block;
+      margin: auto;
+    }
+    .btn-box{
+      text-align: center;
+      .edit-btn{
+        display: inline-block;
+        width: 40%;
+        margin: 30px 15px;
+      }
+    }
+  }
+  .link-btn{
+    display: block;
+    color: $iconRedColor;
+    text-decoration: none;
+    font-size: 25px;
+    text-align: center;
+  }
+}
+
+.image-field_wrapper{
+  position: relative;
+  .image-btn{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    #like_img,
+    #user_img{
+      cursor: pointer;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      opacity: 0;
+    }
+  }
+  .image-edit-btn{
+    width: 300px;
+  }
+  & img {
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .like-edit_img{
+    border-radius: 0%;
+    width: auto;
+    margin: 0 auto;
+    display: block;
+  }
+}

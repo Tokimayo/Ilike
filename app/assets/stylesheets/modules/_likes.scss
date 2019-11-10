@@ -1,0 +1,139 @@
+html {
+  height: 100%;
+  font-family: 'M PLUS 1p', sans-serif;
+  font-weight: 100;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.main{
+  width: calc(100% - 36%);
+  display: inline-block;
+  height: 100%;
+  vertical-align: top;
+  box-sizing: border-box;
+  padding: 30px;
+  overflow: scroll;
+  text-align: center;
+  .likes__box{
+    display: table;
+    margin: 0 auto;
+    & a{
+      text-decoration: none;
+      color:$fontBlackColor;
+      .like{
+        display: table-cell;
+        text-align: center;
+        margin: 40px 35px;
+        width: 200px;
+        height: 200px;
+        display: inline-block;
+        font-size: 20px;
+        & img{
+          width:100%;
+          height:100%;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
+
+.search__main{
+  width: 100%;
+  overflow:visible;
+  text-align: center;
+  .main__title{
+    display: inline-block;
+    font-size: 50px;
+  }
+  .like{
+    margin:40px 30px;
+  }
+}
+
+.side-bar{
+  display: inline-block;
+  font-size: 35px;
+  width: 35%;
+  border: thin solid #ccc;
+  height: 100%;
+  padding: 30px;
+  box-sizing: border-box;
+  background-color: $pointBlueColor;
+  .mypage__box{
+    text-align: center;
+    & a {
+      text-decoration: none;
+    }
+    & img {
+      width: 50%;
+      border-radius: 25px;
+    }
+    .mypage__name{
+      font-size: 25px;
+      margin: -5px 0 0 0;
+      color:$fontBlackColor;
+      text-decoration: none;
+    }
+  }
+  .regist{
+    text-align: center;
+    #regist__text{
+      margin: 30px 0;
+      .regist_button{
+        cursor: pointer;
+        text-decoration: none;
+        .regist_icon{
+          font-size: 25px;
+          vertical-align: middle;
+          margin: 0 -3px 0 7px;
+          color: $iconRedColor;
+        }
+        .regist__btn{
+          color: $iconRedColor;
+          font-weight: bold;
+          margin: 0 -7px;
+          & a {
+            color: $pointBlueColor;
+          }
+        }
+      }
+    }
+  }
+  .search__box{
+    height: 450px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border: thin solid $pointBlueColor;
+    margin: 30px 0 0 0;
+    border-radius: 5px;
+    background-color: $baseWhiteColor;
+    & li {
+      font-size: 20px;
+      text-align: center;
+      display: block;
+      padding: 10px;
+      border-bottom: thin solid #e0e0e0;
+      & a{
+        text-decoration: none;
+        color: black;
+      }
+    }
+    & li:nth-child(odd){
+      background-color: $backGrayColor;
+    }
+  }
+}
+
+.other_user-side-bar{
+  background-color: $backGrayColor;
+  & a {
+    text-decoration: none;
+    color: $iconRedColor;
+  }
+}

@@ -1,0 +1,26 @@
+#account-page.account-page
+  .account-page__inner.clearfix
+    .account-page__inner--left.account-page__header
+      .title Edit Account
+    .account-page__inner--right.user-form
+      = form_for(current_user) do |f|
+        .image-field_wrapper
+          .image-btn
+            = f.file_field :image, id: 'user_img'
+            -if current_user.image.present?
+              = image_tag "#{ current_user.image }", id: 'img_prev'
+            -else
+              = image_tag "img_non_input.png", id: 'img_prev'
+        .text-field_wrapper
+          = f.label :name
+          = f.text_field :name, class: "text-field"
+        .text-field_wrapper
+          = f.label :email
+          = f.email_field :email, class: "text-field"
+        .btn-box
+          =link_to root_path do
+            .submit-btn.edit-btn
+              Back
+          = f.submit "Update", class: "submit-btn edit-btn"
+      .link__box
+        = link_to "Log out", destroy_user_session_path, method: :delete, class: "link-btn"

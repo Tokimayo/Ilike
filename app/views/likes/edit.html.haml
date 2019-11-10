@@ -1,0 +1,38 @@
+.edit-modal
+  .title Edit Like
+  .modal__main
+    = form_for @like do |i|
+      .image-field_wrapper
+        .image-btn.image-edit-btn
+          = i.file_field :image, id: 'like_img'
+          -if @like.image.present?
+            = image_tag "#{ @like.image }", id: 'img_prev', class: 'like-edit_img'
+          -else
+            = image_tag "img_non_input.png", id: 'img_prev'
+      .text-field_wrapper
+        = i.label :genre, "Genre"
+        = i.text_field :genre, placeholder: "Cinema", autocomplete: 'off', class: "text-field"
+        -if @like.errors.full_messages_for(:genre).any?
+          .alert
+            Please enter
+      .text-field_wrapper
+        = i.label :things, "Things"
+        = i.text_field :things, placeholder: "StarWars", autocomplete: 'off', class: "text-field"
+        -if @like.errors.full_messages_for(:things).any?
+          .alert
+            Please enter
+      .text-field_wrapper
+        = i.label :description, "Description"
+        = i.text_area :description, placeholder: "May the Force be with you", autocomplete: 'off', class: "text-field description"
+        -if @like.errors.full_messages_for(:description).any?
+          .alert
+            Please enter
+      .btn-box
+        =link_to root_path do
+          .submit-btn.edit-btn
+            Back
+        = i.submit "Update", class: "submit-btn edit-btn"
+      .link__box
+        = link_to like_path, method: :delete, class: "link-btn" do
+          Delete
+     

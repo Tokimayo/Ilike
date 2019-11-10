@@ -1,0 +1,38 @@
+.modal_wrapper
+= render 'shared/like-modal'
+
+.side-bar
+  .mypage__box
+    = link_to edit_user_path(current_user.id), class: 'mypage' do
+      -if current_user.image.present?
+        = image_tag "#{ current_user.image }", id: 'img_prev'
+      -else
+        = image_tag "img_non_input.png", id: 'img_prev'
+      .mypage__name
+        =current_user.name
+  .regist
+    #regist__text
+      Register your "
+      %a.regist_button
+        %span.regist__btn likes
+        %span= icon 'fas', 'plus-square', class: "regist_icon"
+        %span"
+  = form_tag "", method: :get, class: "search__form" do
+    = text_field_tag :search,"", name: "keyword", placeholder: "Enter genre or thing",class: "form-search"
+    = submit_tag '', name: :nil, class:"form-search__btn"
+    = icon 'fas', 'search', class: "form-search__icon"
+  .search__box
+    %ul.search__box--list
+.main
+  .likes__box
+    - @likes.each do | like |
+      = link_to edit_like_path(like.id), id:"edit_button#{ like.id }", data: { likeid: "#{ like.id }" }do
+        .like
+          -if like.image.present?
+            =image_tag "#{ like.image }", alt: '', class: 'like__img'
+          -else
+            = image_tag "img_non_input.png", id: 'img_prev'
+          =like.things
+        -# = render partial: "shared/like-modal-edit", locals: { like: like }
+.footer
+  .logo
