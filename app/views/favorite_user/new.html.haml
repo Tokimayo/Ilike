@@ -1,0 +1,24 @@
+= render 'shared/header'
+#account-page.account-page.favorite-page
+  .account-page__inner.clearfix
+    .account-page__inner--left.account-page__header
+      .title Favorite User
+    .favorite-user__box
+      .favorite-user__ele
+        -@users.each do |user|
+          - @favorite_users.each do | favorite_user |
+            -if user.id == favorite_user.user_id
+              = link_to edit_favorite_user_path(user.id), class: "favorite-user" do
+                -if user.image.present?
+                  = image_tag "#{ user.image }", id: 'img_prev'
+                -else
+                  = image_tag "img_non_input.png", id: 'img_prev'
+                %span.mypage__name
+                  =user.name
+#account-page.favorite-page-form
+  = form_tag "", method: :get, class: "search-user__form" do
+    = text_field_tag :search,"", name: "keyword", placeholder: "Enter User name",class: "form-user-search"
+    = submit_tag '', name: :nil, class:"form-search__btn"
+    = icon 'fas', 'search', class: "form-search__icon"
+  .search-user__box
+    %ul.search-user__box--list

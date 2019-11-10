@@ -10,7 +10,9 @@
         =@other_user.name
   .regist
     #regist__text
-      = link_to root_path() do
+      Register
+      = link_to favorite_user_index_path(user_id: @other_user.id, followers_user_id: current_user.id), method: :post, class: "regist_button", id: "favorite-regist-btn" do
+        %span.regist__btn Favorites
         %span= icon 'fas', 'user-plus', class: "regist_icon"
   = form_tag "", method: :get, class: "search__form" do
     = text_field_tag :search,"", name: "keyword", placeholder: "Enter genre or thing",class: "form-search"
@@ -21,7 +23,7 @@
 .main
   .likes__box
     - @likes.each do | like |
-      = link_to "/likes/other_user_detail/#{like.id}", id:"edit_button#{ like.id }", data: { likeid: "#{ like.id }" }do
+      = link_to "/favorite_user/other_user_detail/#{like.id}", id:"edit_button#{ like.id }", data: { likeid: "#{ like.id }" }do
         .like
           -if like.image.present?
             =image_tag "#{ like.image }", alt: '', class: 'like__img'

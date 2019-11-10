@@ -46,15 +46,6 @@ class LikesController < ApplicationController
    end
   end
 
-  def other_user
-    @other_user = User.find(params[:id])
-    @likes = Like.where("user_id", params[:user_id])
-  end
-
-  def other_user_detail
-    @like = Like.find( params[:id] )
-  end
-
   private
 
   def create_params
