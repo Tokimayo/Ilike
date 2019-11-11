@@ -17,20 +17,51 @@ body {
   position: fixed;
   width: 100%;
   background-color: #ececec;
+  position: relative;
   & a {
     text-decoration: none;
     color: $pointBlueColor;
   }
+  .btn__box{
+    display: inline-block;
+    position: absolute;
+    top:-5px;
+    right: 27px;
+    #favorite_btn{
+      display: inline-block;
+      font-size: 35px;
+      color: $goldColor;
+      margin: 0 20px;
+      cursor: pointer;
+    }
+    .link-btn{
+      color:$iconRedColor;
+      font-size: 30px;
+      font-weight: 100;
+    }
+  }
+}
+
+.flash__box{
+  background-color: $pointBlueColor;
+  text-align: center;
+  color: #fff;
+  font-weight: 400;
+  &--alert{
+    background-color: $iconRedColor;
+    text-align: center;
+    color: #fff;
+    font-weight: 400;
+  }
 }
 
 .main{
-  margin-top: 66px;
-  width: calc(100% - 36%);
+  width: calc(100% - 460px);
   display: inline-block;
   height: calc(100% - 66px);
   vertical-align: top;
   box-sizing: border-box;
-  padding: 30px;
+  padding: 0 30px 30px;
   overflow-y: scroll;
   overflow-x: hidden;
   text-align: center;
@@ -40,12 +71,16 @@ body {
     & a{
       text-decoration: none;
       color:$fontBlackColor;
+      opacity: 0;
+      display: inline-block;
+      margin: 20px 35px 40px 35px;
+      width: 180px;
+      height: 180px;
       .like{
         display: table-cell;
         text-align: center;
-        margin: 40px 35px;
-        width: 200px;
-        height: 200px;
+        width: 100%;
+        height: 100%;
         display: inline-block;
         font-size: 20px;
         & img{
@@ -53,6 +88,9 @@ body {
           height:100%;
           object-fit: cover;
           border-radius: 50%;
+        }
+        .like__text{
+          opacity: 0;
         }
       }
     }
@@ -65,7 +103,7 @@ body {
   text-align: center;
   .main__title{
     display: inline-block;
-    font-size: 50px;
+    font-size: 40px;
   }
   .like{
     margin:40px 30px;
@@ -73,24 +111,36 @@ body {
 }
 
 .side-bar{
-  margin-top: 66px;
   display: inline-block;
   font-size: 35px;
-  width: 35%;
+  width: 450px;
   border: thin solid #ccc;
   height: calc(100% - 66px);
   padding: 30px;
   box-sizing: border-box;
   background-color: $pointBlueColor;
+  & a {
+    text-decoration: none;
+  }
+  & img {
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    border-radius: 25px;
+    
+  }
   .mypage__box{
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin: 0 auto;
     text-align: center;
-    & a {
-      text-decoration: none;
-    }
-    & img {
-      width: 50%;
-      border-radius: 25px;
-    }
+    padding: 0 0 30px;
+    .mypage{
+      max-width: 200px;
+      max-height: 200px;
+      width: 200px;
+      height: 200px;
     .mypage__name{
       font-size: 25px;
       margin: -5px 0 0 0;
@@ -98,6 +148,7 @@ body {
       text-decoration: none;
     }
   }
+}
 
   #delete__text{
     // display: none;
@@ -145,13 +196,10 @@ body {
       display: block;
       padding: 10px;
       border-bottom: thin solid #e0e0e0;
-      & a{
-        text-decoration: none;
-        color: black;
-      }
     }
-    & li:nth-child(odd){
-      background-color: $backGrayColor;
+    & a{
+      text-decoration: none;
+      color: black;
     }
   }
 }

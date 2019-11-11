@@ -6,7 +6,7 @@
     %span "
   .likes__box
     - @likes.each do | like |
-      = link_to "/likes/other_user/#{like.user_id}" do
+      = link_to "/favorite_user/other_user/#{like.user_id}" do
         .like
           -if like.image.present?
             =image_tag "#{ like.image }", alt: '', class: 'like__img'

@@ -38,7 +38,7 @@
 }
 
 .search-user__box{
-  height: 380px;
+  height: 310px;
   border: thin solid #d4d4d4;
   margin: 10px;
   display: inline-block;
@@ -53,13 +53,10 @@
       display: block;
       padding: 5px;
       border-bottom: thin solid #e0e0e0;
-      & a{
-        text-decoration: none;
-        color: black;
-      }
     }
-    & li:nth-child(odd){
-      background-color: $backGrayColor;
+    & a{
+      text-decoration: none;
+      color: black;
     }
   }
 }
@@ -130,16 +127,6 @@
     font-size: 30px;
     text-align: center;
   }
-  #favorite_btn{
-    display: block;
-    width: 100%;
-    text-decoration: none;
-    font-size: 45px;
-    color: $goldColor;
-    text-align: right;
-    margin: -30px -75px -45px -95px;
-    cursor: pointer;
-  }
   .user-form{
     margin: 30px 0;
     #img_prev{
@@ -166,11 +153,11 @@
 }
 
 #account-page.account-new-page{
-  padding: 260px 166px 166px;
+  padding: 180px 166px 166px;
 }
 
 #account-page.account-regist-page{
-  padding: 115px 166px 166px;
+  padding: 60px 166px 166px;
 }
 
 .image-field_wrapper{
@@ -191,7 +178,7 @@
     }
   }
   .image-edit-btn{
-    max-height: 300px;
+    max-height: 250px;
     max-width: 400px;
     width: auto;
     height: auto;
@@ -212,9 +199,16 @@
 #account-page.favorite-page{
   width: 86%;
   text-align: center;
+  padding: 30px 0 100px;
   .favorite-user__box{
     margin: 10px 0;
-    width: 100%;
+    width: 97%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 15px;
+    height: 330px;
+    border: thin solid $pointBlueColor;
+    border-radius: 10px;
     .favorite-user__ele{
       margin: 0 15px;
       width: 120px;
@@ -223,7 +217,6 @@
       text-align: center;
       .favorite-user{
         text-decoration: none;
-        color: black;
       }
       & img{
         border-radius: 25px;
@@ -231,11 +224,14 @@
         height:100%;
         object-fit: cover;
       }
+      .mypage__name{
+        color: black;
+      }
     }
   }
 }
 
 #account-page.favorite-page-form{
-  margin: 70px auto 10px;
+  margin: -70px auto 10px;
   width: 40%;
 }

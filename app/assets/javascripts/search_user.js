@@ -3,7 +3,7 @@ $(function() {
   var search_list = $(".search-user__box--list");
   
   function appendProduct(user) {
-     var html = `<li><a class=".search-user__box--ele" href="/favorite_user/other_user/${ user.id }">${ user.name }</a></li>`
+     var html = `<a class=".search-user__box--ele" href="/favorite_user/other_user/${ user.id }"><li>${ user.name }</li></a>`
       search_list.append(html);
    }
   

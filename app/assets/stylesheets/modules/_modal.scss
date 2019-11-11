@@ -5,16 +5,17 @@
   top: 0;
   left: 0;
   background-color: black;
-  opacity: .7;
+  opacity: 0;
   display: none;
   z-index: 2;
 }
 
 .modal {
+  opacity: 0;
   z-index: 3;
   position: absolute;
   background-color: #fff;
-  width: 30%;
+  width: 25%;
   top: 0;
   left: 0;
   bottom: 0;
@@ -23,7 +24,7 @@
   border: 1px solid #eee;
   display: none;
   border-radius: 5px;
-  height: 675px;
+  height: 625px;
   &__title{
     margin: 10px;
     text-align: center;
@@ -42,7 +43,7 @@
 
 .edit-modal{
   width: 40%;
-  padding: 125px 75px 75px;
+  padding: 35px 75px 75px;
   & a {
     text-decoration: none;
   }
@@ -54,12 +55,12 @@
   .image-field_wrapper{
     .image-edit-btn{
       max-width: 400px;
-      max-height: 300px;
+      max-height: 250px;
       & img {
         width: auto;
         display: block;
         margin: auto;
-        max-height: 300px;
+        max-height: 250px;
         border-radius: 0%;
         max-width: 400px;
         object-fit:contain;

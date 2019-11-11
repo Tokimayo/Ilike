@@ -1,10 +1,6 @@
 = render 'shared/header'
 .modal_wrapper
 = render 'shared/like-modal'
--if flash[:alert]
-  .alert.alert-danger
-    = flash[:alert]
-
 .side-bar
   .mypage__box
     = link_to edit_user_path(current_user.id), class: 'mypage' do
@@ -29,11 +25,12 @@
 .main
   .likes__box
     - @likes.each do | like |
-      = link_to edit_like_path(like.id), id:"edit_button#{ like.id }", data: { likeid: "#{ like.id }" }do
+      = link_to edit_like_path(like.id), class:"like__box" ,id:"edit_button#{ like.id }", data: { likeid: "#{ like.id }" }do
         .like
           -if like.image.present?
             =image_tag "#{ like.image }", alt: '', class: 'like__img'
           -else
             = image_tag "img_non_input.png", id: 'img_prev'
-          =like.things
+          .like__text
+            =like.things
         -# = render partial: "shared/like-modal-edit", locals: { like: like }

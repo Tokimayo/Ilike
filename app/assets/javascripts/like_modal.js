@@ -2,9 +2,35 @@ $(function() {
   $(document).on('click', '.regist_button', function(e){
     e.preventDefault();
 
+    $('.modal_wrapper').animate({
+      opacity: .7,
+      }, 500);
+
+    $('#modal').animate({
+      width: "30%",
+      height: "675px",
+      opacity: 1,
+      }, 500);
+
     $('.modal_wrapper').show();
     $('#modal').show();
   });
+
+  $(document).on('click', '#modal__cancel', function(){
+
+    $('.modal_wrapper').animate({
+      opacity: 0,
+      }, 500);
+
+    $('#modal').animate({
+      width: "25%",
+      height: "625px",
+      opacity: 0,
+    }, 500);
+
+    $('.modal_wrapper').hide();
+    $('#modal').hide();
+  })
 
   // $("a[id^='edit_button']").on('click', function(e){
   //   // e.preventDefault();
@@ -15,19 +41,14 @@ $(function() {
   //   $('#modal-edit' + id ).show();
   // });
 
-  $(document).on('click', '#modal__cancel', function(){
-    $('.modal_wrapper').hide();
-    $('#modal').hide();
-  })
-
-  $("[id^='modal-edit__cancel']").on('click', function(){
-    location.reload();
+  // $("[id^='modal-edit__cancel']").on('click', function(){
+  //   location.reload();
     // var id = $(this).data("likeid");
 
     // console.log(id);
     // $('.modal_wrapper').hide();
     // $('#modal-edit' + id ).css('display', 'none');
-  });
+  // });
 });
 
 $(function() {

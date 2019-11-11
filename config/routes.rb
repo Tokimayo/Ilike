@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :favorite_user, only: [:new, :create, :edit, :destroy] do
+  resources :favorite_user, only: [:new, :create, :destroy] do
     collection do
       get 'search'
       get 'other_user/:id', to: 'favorite_user#other_user'

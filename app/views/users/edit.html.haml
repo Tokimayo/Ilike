@@ -3,8 +3,6 @@
   .account-page__inner.clearfix
     .account-page__inner--left.account-page__header
       .title Edit Account
-      =link_to new_favorite_user_path, id: "favorite_btn" do
-        %span= icon 'fas', 'star', class: "favorite_icon"
     .account-page__inner--right.user-form
       = form_for(current_user) do |f|
         .image-field_wrapper
@@ -22,5 +20,3 @@
           = f.email_field :email, class: "text-field"
         .btn-box
           = f.submit "Update", class: "submit-btn edit-btn"
-      .link__box
-        = link_to "Log out", destroy_user_session_path, method: :delete, class: "link-btn"

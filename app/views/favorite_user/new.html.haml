@@ -4,11 +4,11 @@
     .account-page__inner--left.account-page__header
       .title Favorite User
     .favorite-user__box
-      .favorite-user__ele
-        -@users.each do |user|
-          - @favorite_users.each do | favorite_user |
-            -if user.id == favorite_user.user_id
-              = link_to edit_favorite_user_path(user.id), class: "favorite-user" do
+      -@users.each do |user|
+        - @favorite_users.each do | favorite_user |
+          -if user.id == favorite_user.user_id
+            .favorite-user__ele
+              = link_to "/favorite_user/other_user/#{favorite_user.user_id}" do
                 -if user.image.present?
                   = image_tag "#{ user.image }", id: 'img_prev'
                 -else

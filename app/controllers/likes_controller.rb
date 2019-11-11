@@ -1,7 +1,7 @@
 class LikesController < ApplicationController
 
   def index
-    @likes = Like.where(user_id: current_user.id).order("created_at DESC")
+    @likes = Like.where(user_id: current_user.id).order("updated_at DESC")
     @new_like = Like.new
   end
   
@@ -9,10 +9,12 @@ class LikesController < ApplicationController
     @new_like = Like.new(create_params)
 
     if @new_like.save
+      redirect_to root_path, notice: 'Registration completed'
     else
       @errors = @new_like.errors
+      redirect_to root_path, alert: 'Registration fail'
     end
-    redirect_to root_path
+    
   end
 
   def edit
@@ -27,13 +29,13 @@ class LikesController < ApplicationController
   def update
     like = Like.find(params[:id])
     like.update(create_params)
-    redirect_to root_path
+    redirect_to root_path, notice: 'Update completed'
   end
 
   def destroy
     like = Like.find(params[:id])
     like.destroy if like.user_id == current_user.id
-    redirect_to root_path
+    redirect_to root_path, alert: 'Delete completed'
   end
 
   def search
