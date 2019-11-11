@@ -8,6 +8,10 @@
     padding: 5px;
     border: thin solid $pointBlueColor;
     border-radius: 5px;
+    background-image: image-url("search_icon.png");
+    background-repeat:no-repeat;
+    background-size:18px 15px;
+    background-position:right 10px center;
   }
   .form-search__btn{
     position: absolute;

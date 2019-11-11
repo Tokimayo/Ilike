@@ -24,8 +24,6 @@
           %span= icon 'fas', 'user-minus', class: "delete_icon"
   = form_tag "", method: :get, class: "search__form" do
     = text_field_tag :search,"", name: "keyword", placeholder: "Enter genre or thing",class: "form-search"
-    = submit_tag '', name: :nil, class:"form-search__btn"
-    = icon 'fas', 'search', class: "form-search__icon"
   .search__box
     %ul.search__box--list
 .main
