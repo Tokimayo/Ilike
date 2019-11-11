@@ -41,22 +41,22 @@ I Like
 ## デモ
 
 トップページ
-![result](https://github.com/Tokimayo/Ilike/readme/トップページ.gif)
+![result](https://github.com/Tokimayo/Ilike/blob/media/readme/トップページ.gif)
 
 好きなもの編集画面
-![result](https://github.com/Tokimayo/Ilike/readme/好きなもの編集画面.gif)
+![result](https://github.com/Tokimayo/Ilike/blob/media/readme/好きなもの編集画面.gif)
 
 好きなもの検索
-![result](https://github.com/Tokimayo/Ilike/readme/検索.gif)
+![result](https://github.com/Tokimayo/Ilike/blob/media/readme/検索.gif)
 
 お気に入りユーザー一覧
-![result](https://github.com/Tokimayo/Ilike/readme/お気に入りユーザー一覧.gif)
+![result](https://github.com/Tokimayo/Ilike/blob/media/readme/お気に入りユーザー一覧.gif)
 
 お気に入りユーザー追加
-![result](https://github.com/Tokimayo/Ilike/readme/お気に入りユーザー追加.gif)
+![result](https://github.com/Tokimayo/Ilike/blob/media/readme/お気に入りユーザー追加.gif)
 
 お気に入りユーザー削除
-![result](https://github.com/Tokimayo/Ilike/readme/お気に入りユーザー削除.gif)
+![result](https://github.com/Tokimayo/Ilike/blob/media/readme/お気に入りユーザー削除.gif)
 
 
 ## 使い方
