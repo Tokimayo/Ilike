@@ -1,7 +1,7 @@
 class LikesController < ApplicationController
 
   def index
-    @likes = Like.where(user_id: current_user.id).order("created_at DESC")
+    @likes = Like.where(user_id: current_user.id).order("updated_at DESC")
     @new_like = Like.new
   end
   
@@ -9,10 +9,12 @@ class LikesController < ApplicationController
     @new_like = Like.new(create_params)
 
     if @new_like.save
+      redirect_to root_path, notice: 'Registration completed'
     else
       @errors = @new_like.errors
+      redirect_to root_path, alert: 'Registration fail'
     end
-    redirect_to root_path
+    
   end
 
   def edit
@@ -27,28 +29,23 @@ class LikesController < ApplicationController
   def update
     like = Like.find(params[:id])
     like.update(create_params)
-    redirect_to root_path
+    redirect_to root_path, notice: 'Update completed'
   end
 
   def destroy
     like = Like.find(params[:id])
     like.destroy if like.user_id == current_user.id
-    redirect_to root_path
+    redirect_to root_path, alert: 'Delete completed'
   end
 
   def search
     # keyword = "%#{params[:keyword]}%"
-    @likes = Like.where('things LIKE(?)', "#{params[:keyword]}%").where.not(user_id: current_user.id).limit(20)
+    @likes = Like.where('things LIKE(?)', "#{params[:keyword]}%").or(Like.where('genre LIKE(?)', "#{params[:keyword]}%")).where.not(user_id: current_user.id).limit(20)
     # @likes = Like.find_by_sql(["select * from likes where things like ? LIMIT 20", keyword]).where.not(id: current_user.id)
    respond_to do |format|
      format.html
      format.json { render 'search', formats: 'json', handlers: 'jbuilder' }
    end
-  end
-
-  def other_user
-    @other_user = User.find(params[:id])
-    @likes = Like.where("user_id", params[:user_id])
   end
 
   private

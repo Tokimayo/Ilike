@@ -1,0 +1,17 @@
+.header
+  =link_to root_path do
+    ILike
+  -if user_signed_in?
+    .btn__box
+      =link_to new_favorite_user_path, id: "favorite_btn" do
+        %span= icon 'fas', 'star', class: "favorite_icon"
+      = link_to "Log out", destroy_user_session_path, method: :delete, class: "link-btn"
+  -else
+    .btn__box
+      = render "devise/shared/links"
+-if flash[:notice]
+  .flash__box
+    = flash[:notice]
+-elsif flash[:alert]
+  .flash__box--alert
+    = flash[:alert]

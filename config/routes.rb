@@ -6,11 +6,16 @@ Rails.application.routes.draw do
   resources :likes do
     collection do
       get 'search'
-      get 'other_user/:id', to: 'likes#other_user'
     end
   end
 
-  
-  
-  root 'likes#index'
+  resources :favorite_user, only: [:new, :create, :destroy] do
+    collection do
+      get 'search'
+      get 'other_user/:id', to: 'favorite_user#other_user'
+      get 'other_user_detail/:id', to: 'favorite_user#other_user_detail'
+    end
+  end
+
+    root 'likes#index'
 end

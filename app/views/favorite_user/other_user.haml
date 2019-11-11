@@ -1,0 +1,43 @@
+= render 'shared/header'
+.side-bar.other_user-side-bar
+  .mypage__box
+    .mypage
+      -if @other_user.image.present?
+        = image_tag "#{ @other_user.image }", id: 'img_prev'
+      -else
+        = image_tag "img_non_input.png", id: 'img_prev'
+      .mypage__name
+        =@other_user.name
+  -if @favorite_user_check.count == 0
+    .regist
+      #regist__text
+        Register
+        = link_to favorite_user_index_path(user_id: @other_user.id, followers_user_id: current_user.id), method: :post, class: "regist_button", id: "favorite-regist-btn" do
+          %span.regist__btn Favorites
+          %span= icon 'fas', 'user-plus', class: "regist_icon"
+  -else
+    .delete
+      #delete__text
+        Release 
+        = link_to favorite_user_path, method: :delete, class: "delete_button", id: "favorite-delete-btn" do
+          %span.delete__btn Favorites
+          %span= icon 'fas', 'user-minus', class: "delete_icon"
+  = form_tag "", method: :get, class: "search__form" do
+    = text_field_tag :search,"", name: "keyword", placeholder: "Enter genre or thing",class: "form-search"
+    = submit_tag '', name: :nil, class:"form-search__btn"
+    = icon 'fas', 'search', class: "form-search__icon"
+  .search__box
+    %ul.search__box--list
+.main
+  .likes__box
+    - @likes.each do | like |
+      = link_to "/favorite_user/other_user_detail/#{like.id}", class:"like__box", id:"edit_button#{ like.id }", data: { likeid: "#{ like.id }" }do
+        .like
+          -if like.image.present?
+            =image_tag "#{ like.image }", alt: '', class: 'like__img'
+          -else
+            = image_tag "img_non_input.png", id: 'img_prev'
+          .like__text
+            =like.things
+.footer
+  .logo

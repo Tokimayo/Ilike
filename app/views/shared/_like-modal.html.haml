@@ -24,7 +24,7 @@
             Please enter
       .text-field_wrapper
         = f.label :description, "Description"
-        = f.text_area :description, placeholder: "May the Force be with you", autocomplete: 'off', class: "text-field description"
+        = f.text_area :description, placeholder: "Please describe", autocomplete: 'off', class: "text-field description"
         -if @new_like.errors.full_messages_for(:description).any?
           .alert
             Please enter

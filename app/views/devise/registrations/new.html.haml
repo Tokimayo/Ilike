@@ -1,4 +1,5 @@
-#account-page.account-page
+= render 'shared/header'
+#account-page.account-page.account-regist-page
   .account-page__inner.clearfix
     .account-page__inner--left.account-page__header
       .title Sign up
@@ -26,4 +27,3 @@
           = f.password_field :password_confirmation, autocomplete: "new-password", class: "text-field"
         .actions
           = f.submit "Sign up", class: "submit-btn"
-      = render "devise/shared/links"

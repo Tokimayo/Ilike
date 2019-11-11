@@ -1,6 +1,8 @@
-.search__form{
+.search__form,
+.search-user__form{
   position: relative;
-  .form-search{
+  .form-search,
+  .form-user-search{
     width: 95%;
     font-size: 20px;
     padding: 5px;
@@ -23,6 +25,39 @@
     top: 18px;
     right: 24px;
     font-size: 23px;
+  }
+}
+
+.search-user__form{
+  .form-search__btn{
+    top: 5px;
+  }
+  .form-search__icon{
+    top: 8px;
+  }
+}
+
+.search-user__box{
+  height: 310px;
+  border: thin solid #d4d4d4;
+  margin: 10px;
+  display: inline-block;
+  width: 93%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border-radius: 5px;
+  .search-user__box--list{
+    & li {
+      font-size: 15px;
+      text-align: center;
+      display: block;
+      padding: 5px;
+      border-bottom: thin solid #e0e0e0;
+    }
+    & a{
+      text-decoration: none;
+      color: black;
+    }
   }
 }
 
@@ -80,7 +115,7 @@
 #account-page.account-page{
   width: 40%;
   margin: auto;
-  padding: 100px;
+  padding: 95px;
   #error_explanation{
     color: $iconRedColor;
     margin: 30px;
@@ -103,7 +138,7 @@
       text-align: center;
       .edit-btn{
         display: inline-block;
-        width: 40%;
+        width: 70%;
         margin: 30px 15px;
       }
     }
@@ -117,12 +152,20 @@
   }
 }
 
+#account-page.account-new-page{
+  padding: 180px 166px 166px;
+}
+
+#account-page.account-regist-page{
+  padding: 60px 166px 166px;
+}
+
 .image-field_wrapper{
-  position: relative;
   .image-btn{
     width: 200px;
     height: 200px;
     margin: 0 auto;
+    position: relative;
     #like_img,
     #user_img{
       cursor: pointer;
@@ -135,7 +178,10 @@
     }
   }
   .image-edit-btn{
-    width: 300px;
+    max-height: 250px;
+    max-width: 400px;
+    width: auto;
+    height: auto;
   }
   & img {
     width:100%;
@@ -149,4 +195,43 @@
     margin: 0 auto;
     display: block;
   }
+}
+#account-page.favorite-page{
+  width: 86%;
+  text-align: center;
+  padding: 30px 0 100px;
+  .favorite-user__box{
+    margin: 10px 0;
+    width: 97%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 15px;
+    height: 330px;
+    border: thin solid $pointBlueColor;
+    border-radius: 10px;
+    .favorite-user__ele{
+      margin: 0 15px;
+      width: 120px;
+      height: 120px;
+      display: inline-block;
+      text-align: center;
+      .favorite-user{
+        text-decoration: none;
+      }
+      & img{
+        border-radius: 25px;
+        width:100%;
+        height:100%;
+        object-fit: cover;
+      }
+      .mypage__name{
+        color: black;
+      }
+    }
+  }
+}
+
+#account-page.favorite-page-form{
+  margin: -70px auto 10px;
+  width: 40%;
 }
