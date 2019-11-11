@@ -7,8 +7,8 @@ $(function() {
       }, 500);
 
     $('#modal').animate({
-      width: "30%",
-      height: "675px",
+      width: "500px",
+      height: "80%",
       opacity: 1,
       }, 500);
 
@@ -23,8 +23,8 @@ $(function() {
       }, 500);
 
     $('#modal').animate({
-      width: "25%",
-      height: "625px",
+      width: "450px",
+      height: "75%",
       opacity: 0,
     }, 500);
 

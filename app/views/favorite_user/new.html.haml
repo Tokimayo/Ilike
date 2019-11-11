@@ -17,8 +17,6 @@
                   =user.name
 #account-page.favorite-page-form
   = form_tag "", method: :get, class: "search-user__form" do
-    = text_field_tag :search,"", name: "keyword", placeholder: "Enter User name",class: "form-user-search"
-    = submit_tag '', name: :nil, class:"form-search__btn"
-    = icon 'fas', 'search', class: "form-search__icon"
+    = text_field_tag :search,"", name: "keyword", placeholder: "Find User",class: "form-user-search"
   .search-user__box
     %ul.search-user__box--list

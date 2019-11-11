@@ -51,6 +51,6 @@ class LikesController < ApplicationController
   private
 
   def create_params
-    params.require(:like).permit(:genre, :things, :image, :description).merge(user_id: current_user.id)
+    params.require(:like).permit(:genre, :things, :image, :description, :url).merge(user_id: current_user.id)
   end
 end

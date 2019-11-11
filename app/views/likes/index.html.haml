@@ -17,9 +17,7 @@
         %span.regist__btn Likes 
         %span= icon 'fas', 'plus-square', class: "regist_icon"
   = form_tag "", method: :get, class: "search__form" do
-    = text_field_tag :search,"", name: "keyword", placeholder: "Enter genre or thing",class: "form-search"
-    = submit_tag '', name: :nil, class:"form-search__btn"
-    = icon 'fas', 'search', class: "form-search__icon"
+    = text_field_tag :search,"", name: "keyword", placeholder: "Find genre or things",class: "form-search"
   .search__box
     %ul.search__box--list
 .main

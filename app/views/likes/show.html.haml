@@ -6,14 +6,15 @@
     %span "
   .likes__box
     - @likes.each do | like |
-      = link_to "/favorite_user/other_user/#{like.user_id}" do
+      = link_to "/favorite_user/other_user/#{like.user_id}", class:"like__box" do
         .like
           -if like.image.present?
             =image_tag "#{ like.image }", alt: '', class: 'like__img'
           -else
             =image_tag "img_non_input.png", id: 'img_prev'
-          %span
-            =like.user.name
-          %span /
-          %p
-            =like.things
+          .like__text
+            %span
+              =like.user.name
+            %span /
+            %p
+              =like.things
