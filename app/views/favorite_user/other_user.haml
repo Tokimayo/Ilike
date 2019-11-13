@@ -14,14 +14,14 @@
         Register
         = link_to favorite_user_index_path(user_id: @other_user.id, followers_user_id: current_user.id), method: :post, class: "regist_button", id: "favorite-regist-btn" do
           %span.regist__btn Favorites
-          %span= icon 'fas', 'user-plus', class: "regist_icon"
+          %span= fa_icon "plus-square", class: "regist_icon"
   -else
     .delete
       #delete__text
         Release 
         = link_to favorite_user_path, method: :delete, class: "delete_button", id: "favorite-delete-btn" do
           %span.delete__btn Favorites
-          %span= icon 'fas', 'user-minus', class: "delete_icon"
+          %span= fa_icon "minus-square", class: "delete_icon"
   = form_tag "", method: :get, class: "search__form" do
     = text_field_tag :search,"", name: "keyword", placeholder: "Enter genre or thing",class: "form-search"
   .search__box

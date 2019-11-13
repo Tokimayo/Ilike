@@ -4,7 +4,7 @@
   -if user_signed_in?
     .btn__box
       =link_to new_favorite_user_path, id: "favorite_btn" do
-        %span= icon 'fas', 'star', class: "favorite_icon"
+        %span= fa_icon "star", class: "favorite_icon"
       = link_to "Log out", destroy_user_session_path, method: :delete, class: "link-btn"
   -else
     .btn__box

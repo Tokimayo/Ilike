@@ -1,6 +1,6 @@
 %div{id: "modal-edit#{like.id}", class: "modal"}
   .modal__title
-    = icon 'fas', 'times', id: "modal-edit__cancel#{like.id}", class: "modal__cancel", data: { likeid: "#{ like.id }" }
+    = fa_icon "times", id: "modal-edit__cancel#{like.id}", class: "modal__cancel", data: { likeid: "#{ like.id }" }
   .modal__main
     = form_for like do |i|
       .image-field_wrapper

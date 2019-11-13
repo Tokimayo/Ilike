@@ -70,7 +70,7 @@ gem 'devise'
 gem 'mini_magick'
 gem 'pry-rails'
 gem "jquery-rails"
-gem 'font-awesome-sass'
+gem "font-awesome-rails"
 gem 'erb2haml'
 gem 'carrierwave'
 gem 'jquery-turbolinks'
