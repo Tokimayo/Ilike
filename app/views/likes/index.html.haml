@@ -7,7 +7,7 @@
       -if current_user.image.present?
         = image_tag "#{ current_user.image }", id: 'img_prev'
       -else
-        = image_tag "img_non_input.png", id: 'img_prev'
+        = image_tag asset_path("img_non_input.png"), id: 'img_prev'
       .mypage__name
         =current_user.name
   .regist
@@ -28,7 +28,7 @@
           -if like.image.present?
             =image_tag "#{ like.image }", alt: '', class: 'like__img'
           -else
-            = image_tag "img_non_input.png", id: 'img_prev'
+            = image_tag asset_path("img_non_input.png"), id: 'img_prev'
           .like__text
             =like.things
         -# = render partial: "shared/like-modal-edit", locals: { like: like }

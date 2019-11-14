@@ -9,7 +9,7 @@
         .image-field_wrapper
           .image-btn
             = f.file_field :image, id: 'user_img'
-            = image_tag "img_non_input.png", id: 'img_prev'
+            = image_tag asset_path("img_non_input.png"), id: 'img_prev'
         .text-field_wrapper
           = f.label :name
           = f.text_field :name, autofocus: true, autocomplete: "name", class: "text-field"

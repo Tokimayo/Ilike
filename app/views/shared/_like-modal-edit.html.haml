@@ -9,7 +9,7 @@
           -if like.image.present?
             = image_tag "#{ like.image }", id: 'img_prev', class: 'like-edit_img'
           -else
-            = image_tag "img_non_input.png", id: 'img_prev'
+            = image_tag asset_path("img_non_input.png"), id: 'img_prev'
       .text-field_wrapper
         = i.label :genre, "Genre"
         = i.text_field :genre, placeholder: "Cinema", autocomplete: 'off', class: "text-field"

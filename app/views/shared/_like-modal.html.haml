@@ -9,7 +9,7 @@
           -if @new_like.image.present?
             = image_tag @user.image, id: 'img_prev'
           -else
-            = image_tag "img_non_input.png", id: 'img_prev'
+            = image_tag asset_path("img_non_input.png"), id: 'img_prev'
       .text-field_wrapper
         = f.text_field :genre, placeholder: "Genre", autocomplete: 'off', class: "text-field"
         -if @new_like.errors.full_messages_for(:genre).any?

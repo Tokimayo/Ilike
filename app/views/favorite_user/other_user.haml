@@ -5,7 +5,7 @@
       -if @other_user.image.present?
         = image_tag "#{ @other_user.image }", id: 'img_prev'
       -else
-        = image_tag "img_non_input.png", id: 'img_prev'
+        = image_tag asset_path("img_non_input.png"), id: 'img_prev'
       .mypage__name
         =@other_user.name
   -if @favorite_user_check.count == 0
@@ -34,7 +34,7 @@
           -if like.image.present?
             =image_tag "#{ like.image }", alt: '', class: 'like__img'
           -else
-            = image_tag "img_non_input.png", id: 'img_prev'
+            = image_tag asset_path("img_non_input.png"), id: 'img_prev'
           .like__text
             =like.things
 .footer

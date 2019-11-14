@@ -12,7 +12,7 @@
                 -if user.image.present?
                   = image_tag "#{ user.image }", id: 'img_prev'
                 -else
-                  = image_tag "img_non_input.png", id: 'img_prev'
+                  = image_tag asset_path("img_non_input.png"), id: 'img_prev'
                 %span.mypage__name
                   =user.name
 #account-page.favorite-page-form
